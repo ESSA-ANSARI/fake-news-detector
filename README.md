@@ -1,11 +1,11 @@
 
 ## 📸 Project Demo
 
-![Screenshot](<img width="1365" height="767" alt="Capture" src="https://github.com/user-attachments/assets/1e8698fc-aad3-40be-a359-60686720cb94" />
-)
-![Screenshot](<img width="1365" height="767" alt="Capture1" src="https://github.com/user-attachments/assets/6252ae03-e426-4fa7-b163-3c7999412640" />)
-![Screenshot](<img width="1365" height="767" alt="Capture2" src="https://github.com/user-attachments/assets/14d4bf13-9e4e-48e4-8c97-c1516217051f" />
-)
+![Screenshot]<img width="1365" height="767" alt="Capture" src="https://github.com/user-attachments/assets/1e8698fc-aad3-40be-a359-60686720cb94" />
+
+![Screenshot]<img width="1365" height="767" alt="Capture1" src="https://github.com/user-attachments/assets/6252ae03-e426-4fa7-b163-3c7999412640" />
+![Screenshot]<img width="1365" height="767" alt="Capture2" src="https://github.com/user-attachments/assets/14d4bf13-9e4e-48e4-8c97-c1516217051f" />
+
 
 # 📰 Fake News Detector
 
