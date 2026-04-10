@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Fake News Detector</title>
+<style>
+body
+{
+font-family: Arial;
+text-align: center;
+backgroud-color: #f5f5f5;
+}
+textarea
+{
+width: 60%;
+padding: 10px;
+}
+button
+{
+padding: 10px, 20px;
+background-color: black;
+color: white;
+border: none;
+cursor: pointer;
+}
+h1
+{
+color: #333;
+}
+h2
+{
+color: blue;
+}
+</style>
+</head>
+<body>
+
+<h1>Fake News Detector</h1>
+
+<form action="/predict" method="post" >
+<textarea name="news" rows="10" cols="50" placeholder="Enter text here....."></textarea>
+<br><br>
+<button type="submit">Check</button>
+</form>
+
+<h2>{{  prediction_text  }}</h2>
+
+</body>
+</html>
