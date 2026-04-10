@@ -1,3 +1,9 @@
+## 📸 Project Demo
+
+![Screenshot](Capture.PNG)
+![Screenshot](Capture1.PNG)
+![Screenshot](Capture2.PNG)
+
 # 📰 Fake News Detector
 
 This is a simple web application that detects whether a news article is **Fake** or **Real** using Machine Learning.
