@@ -2,3 +2,6 @@ flask
 scikit-learn
 pandas
 numpy
+beautifulsoup4
+requests
+newspaper3k
