@@ -1,48 +1,216 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Fake News Detector</title>
+<meta charset="UTF-8">
+<title>VeriNews AI</title>
+
 <style>
-body
-{
-font-family: Arial;
-text-align: center;
-backgroud-color: #f5f5f5;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
 }
-textarea
-{
-width: 60%;
-padding: 10px;
+
+/* Header */
+.header {
+    text-align: center;
+    margin-top: 30px;
 }
-button
-{
-padding: 10px, 20px;
-background-color: black;
-color: white;
-border: none;
-cursor: pointer;
+
+.header h1 {
+    color: #38bdf8;
+    margin-bottom: 5px;
 }
-h1
-{
-color: #333;
+
+.header p {
+    color: #94a3b8;
 }
-h2
-{
-color: blue;
+
+/* Chat container */
+.chat-container {
+    width: 60%;
+    margin: 40px auto;
+    padding-bottom: 120px;
+}
+
+/* Messages */
+.message {
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 12px;
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+.message:hover {
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+/* User */
+.user {
+    background: #1e293b;
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Bot */
+.bot {
+    background: #020617;
+    border: 1px solid #334155;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(56,189,248,0.2);
+}
+
+/* Signals */
+.signals {
+    margin-top: 20px;
+}
+
+.signals h3 {
+    margin-bottom: 5px;
+}
+
+.signals ul {
+    padding-left: 20px;
+}
+
+/* Confidence bar */
+.confidence-container {
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.confidence-bar {
+    background: #38bdf8;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Input box */
+.input-box {
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    gap: 10px;
+}
+
+textarea {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1e293b;
+    color: white;
+}
+
+button {
+    padding: 12px 20px;
+    background: #38bdf8;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+#loading {
+    display: none;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 5px;
 }
 </style>
 </head>
+
 <body>
 
-<h1>Fake News Detector</h1>
+<div class="header">
+    <h1>VeriNews AI</h1>
+    <p>Explainable ML-based Fake News Detection System</p>
+</div>
 
-<form action="/predict" method="post" >
-<textarea name="news" rows="10" cols="50" placeholder="Enter text here....."></textarea>
-<br><br>
-<button type="submit">Check</button>
+<div class="chat-container">
+
+{% if user_input %}
+<div class="message user">
+    {{ user_input }}
+</div>
+{% endif %}
+
+{% if prediction_text %}
+<div class="message bot">
+    <p>{{ prediction_text }}</p>
+    <p>{{ reason }}</p>
+
+    <p><b>Summary:</b> {{ summary }}</p>
+    <p><b>Tone:</b> {{ tone }}</p>
+
+    {% if source %}
+    <p><b>Source Credibility:</b> {{ source }}</p>
+    {% endif %}
+
+    <p style="color:#94a3b8; font-size:14px;">
+        These words influenced the prediction based on learned patterns.
+    </p>
+</div>
+
+{% if fake_words or real_words %}
+<div class="signals">
+    <h3>?? Words pushing toward FAKE</h3>
+    <ul>
+        {% for word in fake_words %}
+        <li style="color:#f87171">{{ word }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>?? Words pushing toward REAL</h3>
+    <ul>
+        {% for word in real_words %}
+        <li style="color:#4ade80">{{ word }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if confidence %}
+<div class="confidence-container">
+    <div class="confidence-bar" style="width: {{ confidence }}%;">
+        Confidence: {{ confidence }}%
+    </div>
+</div>
+{% endif %}
+
+{% endif %}
+
+</div>
+
+<form action="/predict" method="post" class="input-box">
+    <textarea name="news" placeholder="Paste news or URL here..."></textarea>
+    <button type="submit">Analyze</button>
 </form>
 
-<h2>{{  prediction_text  }}</h2>
+<p id="loading" style="text-align:center;">Analyzing news...</p>
+
+<script>
+const form = document.querySelector("form");
+const loading = document.getElementById("loading");
+
+form.addEventListener("submit", () => {
+    loading.style.display = "block";
+});
+</script>
 
 </body>
 </html>
