@@ -57,7 +57,7 @@ Then open in browser:
 
 http://127.0.0.1:5000
 
-## 🧪 How It Works
+**## 🧪 How It Works**
 
 1. User inputs text or URL
 2. Article content is extracted (if URL)
@@ -70,7 +70,7 @@ http://127.0.0.1:5000
  - Summary
  - Tone analysis
 
-## 🚀 Future Improvements
+**## 🚀 Future Improvements**
 
 This project is actively being improved. Planned upgrades include:
 
@@ -82,16 +82,16 @@ This project is actively being improved. Planned upgrades include:
 📱 Mobile-friendly UI
 🔐 User authentication + saved history
 
-## ⚠️ Disclaimer
+**## ⚠️ Disclaimer**
 
 This system is intended for educational and experimental purposes only.
 Predictions may not always be accurate and should not be used as a sole source for verifying news authenticity.
 
-## 👤 Author
+**## 👤 Author**
 
 Essa Ansari
 Aspiring Data Scientist | Al/ML Enthusiast
 Focused on building real-world, impactful ML systems
 
-## ⭐ Support
+**## ⭐ Support**
 If you found this project useful, consider giving it a ⭐ on GitHub!
