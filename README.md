@@ -1,55 +1,97 @@
+# 🚀 VeriNews AI — Explainable Fake News Detection System
 
-## 📸 Project Demo
+## 📌 Overview
 
-![Screenshot]<img width="1365" height="767" alt="Capture" src="https://github.com/user-attachments/assets/1e8698fc-aad3-40be-a359-60686720cb94" />
+**VeriNews AI** is an end-to-end Machine Learning application that detects whether a news article is **REAL or FAKE**, while also providing **human-understandable explanations** behind the prediction.
 
-![Screenshot]<img width="1365" height="767" alt="Capture1" src="https://github.com/user-attachments/assets/6252ae03-e426-4fa7-b163-3c7999412640" />
-![Screenshot]<img width="1365" height="767" alt="Capture2" src="https://github.com/user-attachments/assets/14d4bf13-9e4e-48e4-8c97-c1516217051f" />
-
-
-# 📰 Fake News Detector
-
-This is a simple web application that detects whether a news article is **Fake** or **Real** using Machine Learning.
+Unlike basic classifiers, this system focuses on **Explainable AI**, allowing users to see *why* a piece of news is flagged as misleading.
 
 ---
 
-## 🚀 How it works
+## 🔥 Key Features
 
-1. User enters news text
-2. The text is converted into numbers using a vectorizer
-3. A trained ML model predicts whether it is Fake or Real
-4. Result is shown with confidence score
-
----
-
-## 🧠 Tech Used
-
-- Python
-- Flask
-- Scikit-learn
-- HTML/CSS
+- 🧠 **ML Model** — TF-IDF + Logistic Regression
+- 🌐 **Dual Input Support** — Paste raw text or news article URL
+- 📊 **Confidence Score Visualization**
+- 🔍 **Explainable AI** — Top contributing words influencing prediction
+- 🧾 **Automatic Summarization** of article
+- 🎭 **Tone Detection** — Neutral vs Sensational content
+- ⚡ **Interactive Flask UI**
+- 🧩 **Feature Importance Extraction (Model-based interpretability)**
+- 📝 **Logging system** to track predictions
 
 ---
 
-## ▶️ Run this project
+## 🧠 Model Details
 
-1. Install libraries:
+- **Algorithm:** Logistic Regression  
+- **Vectorization:** TF-IDF (Unigrams + Bigrams)  
+- **Dataset:** Fake.csv + True.csv  
+- **Training Size:** ~25,000 samples  
+- **Accuracy:** *Add your actual accuracy here*  
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Interface
+![Home](screenshots/.png)
+
+### 🟢 Real News Detection
+![Real](screenshots/real_result.png)
+
+### 🔴 Fake News Detection
+![Fake](screenshots/fake_result.png)
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+git clone https://github.com/ESSA-ANSARI/fake-news-detector.git
+cd fake-news-detector
 
 pip install -r requirements.txt
-
-
-2. Run the app:
-
 python app.py
-
-
-3. Open browser:
+Then open in browser:
 
 http://127.0.0.1:5000
 
+## 🧪 How It Works
 
----
+1. User inputs text or URL
+2. Article content is extracted (if URL)
+3. Text is cleaned and vectorized using TF-IDF
+4. Logistic Regression predicts REAL / FAKE
+5. Model coefficients identify important words
+6. System generates:
+ - Confidence score
+ - Key influencing words
+ - Summary
+ - Tone analysis
 
-## 📌 Note
+## 🚀 Future Improvements
 
-This project is built for learning how Machine Learning models can be converted into real-world web applications.
+This project is actively being improved. Planned upgrades include:
+
+🤖 Advanced models (BERT / Transformers)
+🌍 Real-time news verification using APIs
+☁️ Cloud deployment (Render / AWS)
+📈 Improved explainability using SHAP/LIME
+🧠 Bias detection and credibility scoring
+📱 Mobile-friendly UI
+🔐 User authentication + saved history
+
+## ⚠️ Disclaimer
+
+This system is intended for educational and experimental purposes only.
+Predictions may not always be accurate and should not be used as a sole source for verifying news authenticity.
+
+## 👤 Author
+
+Essa Ansari
+Aspiring Data Scientist | Al/ML Enthusiast
+Focused on building real-world, impactful ML systems
+
+## ⭐ Support
+If you found this project useful, consider giving it a ⭐ on GitHub!
