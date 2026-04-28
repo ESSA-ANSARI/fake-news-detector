@@ -56,6 +56,7 @@ python app.py
 Then open in browser:
 
 http://127.0.0.1:5000
+```
 
 ## 🧪 How It Works
 
@@ -84,12 +85,12 @@ This project is actively being improved. Planned upgrades include:
 
 ## ⚠️ Disclaimer
 
-This system is intended for educational and experimental purposes only.
+This system is intended for **educational and experimental purposes only.**
 Predictions may not always be accurate and should not be used as a sole source for verifying news authenticity.
 
 ## 👤 Author
 
-Essa Ansari
+**Essa Ansari**
 Aspiring Data Scientist | Al/ML Enthusiast
 Focused on building real-world, impactful ML systems
 
