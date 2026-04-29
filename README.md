@@ -35,13 +35,13 @@ Unlike basic classifiers, this system focuses on **Explainable AI**, allowing us
 ## 📸 Screenshots
 
 ### 🏠 Home Interface
-![Home](screenshots/Home.png)
+![Home]<img width="1365" height="767" alt="Home" src="https://github.com/user-attachments/assets/44f26962-fb72-42ab-9c3b-cdc225117a01" />
 
 ### 🟢 Real News Detection
-![Real](screenshots/Real.png)
+![Real]<img width="1365" height="767" alt="Real" src="https://github.com/user-attachments/assets/2339b565-9231-43b6-a292-2191cc297023" />
 
 ### 🔴 Fake News Detection
-![Fake](screenshots/Fake.png)
+![Fake]<img width="1365" height="767" alt="Fake" src="https://github.com/user-attachments/assets/decca40f-ccef-4923-bd3d-f68c32e2d964" />
 
 ---
 
