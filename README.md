@@ -75,13 +75,13 @@ http://127.0.0.1:5000
 
 This project is actively being improved. Planned upgrades include:
 
-🤖 Advanced models (BERT / Transformers)
-🌍 Real-time news verification using APIs
-☁️ Cloud deployment (Render / AWS)
-📈 Improved explainability using SHAP/LIME
-🧠 Bias detection and credibility scoring
-📱 Mobile-friendly UI
-🔐 User authentication + saved history
+- 🤖 Advanced models (BERT / Transformers)
+- 🌍 Real-time news verification using APIs
+- ☁️ Cloud deployment (Render / AWS)
+- 📈 Improved explainability using SHAP/LIME
+- 🧠 Bias detection and credibility scoring
+- 📱 Mobile-friendly UI
+- 🔐 User authentication + saved history
 
 ## ⚠️ Disclaimer
 
