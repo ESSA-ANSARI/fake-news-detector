@@ -1,98 +1,124 @@
-# 🚀 VeriNews AI — Explainable Fake News Detection System
+# 🧠 VeriNews AI — Explainable Fake News Detection System
 
-## 📌 Overview
-
-**VeriNews AI** is an end-to-end Machine Learning application that detects whether a news article is **REAL or FAKE**, while also providing **human-understandable explanations** behind the prediction.
-
-Unlike basic classifiers, this system focuses on **Explainable AI**, allowing users to see *why* a piece of news is flagged as misleading.
+🚀 **Live Demo:** https://verinews-ai-v9sh.onrender.com
 
 ---
 
-## 🔥 Key Features
+## 📌 Overview
 
-- 🧠 **ML Model** — TF-IDF + Logistic Regression
-- 🌐 **Dual Input Support** — Paste raw text or news article URL
-- 📊 **Confidence Score Visualization**
-- 🔍 **Explainable AI** — Top contributing words influencing prediction
-- 🧾 **Automatic Summarization** of article
-- 🎭 **Tone Detection** — Neutral vs Sensational content
-- ⚡ **Interactive Flask UI**
-- 🧩 **Feature Importance Extraction (Model-based interpretability)**
-- 📝 **Logging system** to track predictions
+VeriNews AI is a deployed machine learning web application that detects whether a news article is **REAL or FAKE**, while also providing **interpretable explanations** for its predictions.
+
+Unlike black-box models, this system focuses on **transparency and trust**, highlighting the key linguistic patterns influencing each decision.
+
+---
+
+## ⚙️ Key Features
+
+* 🧠 **Machine Learning Model** — Logistic Regression with TF-IDF
+* 🌐 **URL Input Support** — Extract and analyze news directly from articles
+* 📊 **Confidence Score** — Probability-based prediction output
+* 🔍 **Explainable AI (XAI)** — Shows influential words behind predictions
+* 🧾 **Auto Summarization** — Generates quick preview of content
+* 🎭 **Tone Detection** — Identifies emotional vs neutral writing
+* 🏷️ **Source Credibility Indicator** — Basic domain-based trust signal
+* ⚡ **Deployed Web App** — Accessible via live public URL
 
 ---
 
 ## 🧠 Model Details
 
-- **Algorithm:** Logistic Regression  
-- **Vectorization:** TF-IDF (Unigrams + Bigrams)  
-- **Dataset:** Fake.csv + True.csv  
-- **Training Size:** ~25,000 samples  
-- **Accuracy:** *Add your actual accuracy here*  
+* **Algorithm:** Logistic Regression
+* **Vectorization:** TF-IDF (max_features=3000)
+* **Text Processing:** Custom cleaning + stopword removal
+* **Dataset:** Combined Fake + Real news dataset
+* **Training Size:** ~25,000 samples
+* **Performance:** ~97% accuracy *(depends on split)*
 
 ---
 
 ## 📸 Screenshots
 
 ### 🏠 Home Interface
+
 ![Home]<img width="1365" height="767" alt="Home" src="https://github.com/user-attachments/assets/44f26962-fb72-42ab-9c3b-cdc225117a01" />
 
 ### 🟢 Real News Detection
+
 ![Real]<img width="1365" height="767" alt="Real" src="https://github.com/user-attachments/assets/2339b565-9231-43b6-a292-2191cc297023" />
 
 ### 🔴 Fake News Detection
+
 ![Fake]<img width="1365" height="767" alt="Fake" src="https://github.com/user-attachments/assets/decca40f-ccef-4923-bd3d-f68c32e2d964" />
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** Flask
+* **ML Libraries:** scikit-learn, pandas, numpy
+* **NLP:** TF-IDF, custom preprocessing
+* **Deployment:** Render
+* **Other:** newspaper3k, BeautifulSoup
 
 ---
 
 ## ⚙️ Installation & Setup
 
 ```bash
-git clone https://github.com/ESSA-ANSARI/fake-news-detector.git
+git clone https://github.com/ESSA-AI/fake-news-detector.git
 cd fake-news-detector
 
 pip install -r requirements.txt
 python app.py
-Then open in browser:
-
-http://127.0.0.1:5000
 ```
 
-## 🧪 How It Works
+---
+
+## 🧩 How It Works
 
 1. User inputs text or URL
 2. Article content is extracted (if URL)
-3. Text is cleaned and vectorized using TF-IDF
-4. Logistic Regression predicts REAL / FAKE
-5. Model coefficients identify important words
-6. System generates:
- - Confidence score
- - Key influencing words
- - Summary
- - Tone analysis
+3. Text is cleaned and preprocessed
+4. TF-IDF vectorization applied
+5. Logistic Regression predicts label
+6. Confidence score generated
+7. Top influencing words extracted
+8. Summary + tone + explanation displayed
 
-## 🚀 Future Improvements
+---
 
-This project is actively being improved. Planned upgrades include:
+## 🚧 Limitations
 
-- 🤖 Advanced models (BERT / Transformers)
-- 🌍 Real-time news verification using APIs
-- ☁️ Cloud deployment (Render / AWS)
-- 📈 Improved explainability using SHAP/LIME
-- 🧠 Bias detection and credibility scoring
-- 📱 Mobile-friendly UI
-- 🔐 User authentication + saved history
+* Model may struggle with highly nuanced or satirical content
+* Source credibility is rule-based (not learned)
+* Performance depends on training dataset quality
+
+---
+
+## 🔮 Future Improvements
+
+* 🔬 Integrate SHAP/LIME for advanced explainability
+* 🌍 Multi-language support
+* 🧠 Transformer-based models (BERT)
+* 🎨 Improved UI/UX
+* 🔗 Real-time news API integration
+
+---
 
 ## ⚠️ Disclaimer
 
-This system is intended for **educational and experimental purposes only.**
-Predictions may not always be accurate and should not be used as a sole source for verifying news authenticity.
+This project is for educational and experimental purposes only.
+Predictions may not always be accurate and should not be used as the sole source of truth.
+
+---
 
 ## 👤 Author
 
 **Essa Ansari**
-Aspiring Data Scientist | Al/ML Enthusiast
-Focused on building real-world, impactful ML systems
+Aspiring Data Scientist | AI/ML Enthusiast
+
+---
 
 ## ⭐ Support
+
 If you found this project useful, consider giving it a ⭐ on GitHub!
