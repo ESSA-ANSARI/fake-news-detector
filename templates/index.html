@@ -5,131 +5,201 @@
 <title>VeriNews AI</title>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #0f172a;
+    background: #020617;
     color: #e2e8f0;
-    margin: 0;
+    min-height: 100vh;
 }
 
 /* Header */
 .header {
     text-align: center;
-    margin-top: 30px;
+    padding: 40px 20px 20px;
 }
 
 .header h1 {
+    font-size: 3rem;
     color: #38bdf8;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .header p {
     color: #94a3b8;
+    font-size: 1.1rem;
 }
 
-/* Chat container */
+/* Main Container */
 .chat-container {
-    width: 60%;
-    margin: 40px auto;
-    padding-bottom: 120px;
+    width: 90%;
+    max-width: 950px;
+    margin: 30px auto;
 }
 
-/* Messages */
+/* Message Cards */
 .message {
-    padding: 18px;
-    margin: 20px 0;
-    border-radius: 12px;
-    max-width: 80%;
-    line-height: 1.6;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    animation: fadeIn 0.4s ease;
 }
 
-.message:hover {
-    transform: scale(1.01);
-    transition: 0.2s;
-}
-
-/* User */
 .user {
     background: #1e293b;
-    margin-left: auto;
-    text-align: right;
-}
-
-/* Bot */
-.bot {
-    background: #020617;
     border: 1px solid #334155;
-    margin-right: auto;
-    box-shadow: 0 0 15px rgba(56,189,248,0.2);
 }
 
-/* Signals */
-.signals {
+.bot {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    box-shadow: 0 0 25px rgba(56,189,248,0.08);
+}
+
+/* Verdict Badge */
+.verdict {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.real {
+    background: rgba(34,197,94,0.15);
+    color: #4ade80;
+}
+
+.fake {
+    background: rgba(248,113,113,0.15);
+    color: #f87171;
+}
+
+/* Sections */
+.section {
     margin-top: 20px;
 }
 
-.signals h3 {
-    margin-bottom: 5px;
+.section-title {
+    font-size: 15px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.signals ul {
-    padding-left: 20px;
-}
-
-/* Confidence bar */
+/* Confidence */
 .confidence-container {
+    width: 100%;
     background: #1e293b;
-    border-radius: 10px;
+    border-radius: 999px;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 15px;
+    height: 28px;
 }
 
 .confidence-bar {
-    background: #38bdf8;
-    padding: 10px;
+    height: 100%;
+    background: linear-gradient(to right, #38bdf8, #0ea5e9);
+    text-align: center;
     color: black;
     font-weight: bold;
-    text-align: center;
+    line-height: 28px;
 }
 
-/* Input box */
-.input-box {
-    width: 60%;
-    margin: 30px auto;
+/* Word Tags */
+.word-tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+}
+
+.tag {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.fake-tag {
+    background: rgba(248,113,113,0.15);
+    color: #f87171;
+}
+
+.real-tag {
+    background: rgba(74,222,128,0.15);
+    color: #4ade80;
+}
+
+/* Form */
+.input-box {
+    position: sticky;
+    bottom: 0;
+    background: #020617;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #1e293b;
 }
 
 textarea {
     flex: 1;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background-color: #1e293b;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #334155;
+    background: #0f172a;
     color: white;
+    font-size: 15px;
+    resize: none;
+    height: 90px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
 }
 
 button {
-    padding: 12px 20px;
     background: #38bdf8;
     color: black;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 14px;
+    padding: 0 28px;
     font-weight: bold;
-}
-
-button:hover {
-    background: #0ea5e9;
-    transform: scale(1.05);
+    cursor: pointer;
     transition: 0.2s;
 }
 
+button:hover {
+    transform: scale(1.03);
+    background: #0ea5e9;
+}
+
+/* Loading */
 #loading {
-    display: none;
-    font-size: 14px;
+    text-align: center;
     color: #94a3b8;
-    margin-top: 5px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
